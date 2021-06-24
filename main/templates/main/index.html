@@ -1,0 +1,11 @@
+{% block content %}
+<h1>rate stuff</h1>
+
+<p>You can now rate:</p>
+
+<ol>
+    {% for item in ratings %}
+    <li><a href="{% url 'rate' item.title %}">{{ item.title }}</a></li>
+    {% endfor %}
+</ol>
+{% endblock %}
