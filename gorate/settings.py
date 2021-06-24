@@ -29,7 +29,11 @@ SECRET_KEY = os.environ.get(
 DEBUG = True if os.environ.get("NODEBUG") is None else False
 
 
-ALLOWED_HOSTS = ["gorate.app"]
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "gorate.app",
+]
 
 
 # Application definition
