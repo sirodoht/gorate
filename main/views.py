@@ -1,15 +1,19 @@
+from django import forms
 from django.http import HttpResponse
 from django.shortcuts import render
-from django import forms
 
 from main import models
 
 
 def rate(request, title):
     if request.method == "GET":
-        return render(request, "main/rate.html", {
-            "title": title,
-        })
+        return render(
+            request,
+            "main/rate.html",
+            {
+                "title": title,
+            },
+        )
     elif request.method == "POST":
 
         class RatingForm(forms.ModelForm):
