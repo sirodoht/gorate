@@ -5,6 +5,12 @@ from django.shortcuts import render
 from main import models
 
 
+def index(request):
+    return render(request, "main/index.html", {
+        "ratings": models.Rating.objects.all().order_by("id"),
+    })
+
+
 def rate(request, title):
     if request.method == "GET":
         return render(
